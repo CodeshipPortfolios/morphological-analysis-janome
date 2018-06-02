@@ -12,8 +12,9 @@ yousos = list()
 for youso in keitaiso:
   youso = str(youso)
   print(youso)
-  tmp = youso.split('\t')
-  yousos.append(tmp[0])
+  tmp1 = youso.split('\t')
+  tmp2 = tmp1[1].split(',')
+  yousos.append(tmp2[6])
 # 感情判定
 enp_hantei(yousos)
 
