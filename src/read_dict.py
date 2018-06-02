@@ -1,13 +1,14 @@
 #辞書ファイルを読み込むテスト
 def read_dictionary():
   # 単語による判定
-  file = open("../dict/dict1.txt","r")
+  file = open("dict/dict1.txt","r")
   read_data = {}
   for line in file:
     read_line = line.split('\t')
     read_data[read_line[0]] = read_line[1]
   file.close()
   return read_data
+
 
 def enp_hantei(yousos):
   dictionary = read_dictionary()
@@ -27,7 +28,8 @@ def enp_hantei(yousos):
     else: 
       print(text+'\t'+'none')
   if kanjou == 0:
-      print('------------------------\n感情数値:'+str(0))
+    r = '------------------------\n感情数値:'+str(0)
   else:
     suuchi = kanjou/count
-    print('------------------------\n感情数値:'+str(suuchi))
+    r = '------------------------\n感情数値:'+str(suuchi)
+  return(r)
