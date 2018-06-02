@@ -1,7 +1,9 @@
-from flask import Flask,request,json,render_template
+from flask import Flask,request,json,render_template,jsonify
 from src.main import kaiseki
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def hello():
@@ -10,10 +12,11 @@ def hello():
 @app.route("/api",methods=["POST"])
 def kanjou():
   if request.method == 'POST':
-    name = request.form['name']
+    name = request
+    print(name)
   else:
     name = "no name."
-  return kaiseki(name)
+  return jsonify(res='ok')
 
 @app.route("/example")
 def example():
