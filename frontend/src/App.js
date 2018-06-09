@@ -16,17 +16,23 @@ class App extends Component {
     console.log(this.state.text);
     
   }
-  submitHandle(){
+  async submitHandle(){
     const url = 'http://localhost:5000/api'
-    console.log(this.state)
-    fetch(url,{
+    //console.log(this.state)
+    const res = await fetch(url,{
       headers:{'Access-Control-Allow-Origin':'*'},
       method: 'POST',
       mode: 'cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
       data: this.state
-    }).then(response => {
-      return response.text();
     })
+    console.log(res);
+    
+
   }
   render() {
     return (

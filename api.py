@@ -1,4 +1,4 @@
-from flask import Flask,request,json,render_template,jsonify
+from flask import Flask,request,json,render_template,jsonify,make_response
 from src.main import kaiseki
 from flask_cors import CORS
 
@@ -16,7 +16,7 @@ def kanjou():
     print(name)
   else:
     name = "no name."
-  return jsonify(res='ok')
+  return("こんにちは！")
 
 @app.route("/example")
 def example():
