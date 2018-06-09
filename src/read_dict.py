@@ -28,8 +28,8 @@ def enp_hantei(yousos):
     else: 
       print(text+'\t'+'none')
   if kanjou == 0:
-    r = '------------------------\n感情数値:'+str(0)
+    r = '感情数値:'+str(0)
   else:
     suuchi = kanjou/count
-    r = '------------------------\n感情数値:'+str(suuchi)
+    r = '感情数値:'+str(suuchi)
   return(r)
