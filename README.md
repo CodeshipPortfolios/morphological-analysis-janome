@@ -1,4 +1,4 @@
-#Morophological-analyis
+# Morophological-analyis
 Python(janome,Flask,)+React
 
 This App is analysis human feeling from input text(JP).
